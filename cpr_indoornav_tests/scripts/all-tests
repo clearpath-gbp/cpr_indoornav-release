@@ -1,4 +1,0 @@
-#!/bin/bash
-
-rosrun cpr_indoornav_tests network-tests
-rosrun cpr_indoornav_tests ros-tests
