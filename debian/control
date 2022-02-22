@@ -1,0 +1,12 @@
+Source: ros-melodic-cpr-indoornav
+Section: misc
+Priority: optional
+Maintainer: Chris Iverach-Brereton <civerachb@clearpathrobotics.com>
+Build-Depends: debhelper (>= 9.0.0), ros-melodic-catkin
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-melodic-cpr-indoornav
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-melodic-cpr-indoornav-msgs, ros-melodic-dingo-msgs, ros-melodic-husky-msgs, ros-melodic-jackal-msgs, ros-melodic-ridgeback-msgs, ros-melodic-robot-upstart, ros-melodic-sensor-msgs, ros-melodic-std-msgs, ros-melodic-topic-tools, ros-melodic-wireless-watcher
+Description: Remote launch files for starting IndoorNav on a backpack PC
