@@ -1,0 +1,12 @@
+Source: ros-noetic-cpr-indoornav-tests
+Section: misc
+Priority: optional
+Maintainer: Chris Iverach-Brereton <civerachb@clearpathrobotics.com>
+Build-Depends: debhelper (>= 9.0.0), ros-noetic-catkin
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-noetic-cpr-indoornav-tests
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-noetic-cpr-indoornav
+Description: Additional testing scripts to verify IndoorNav
