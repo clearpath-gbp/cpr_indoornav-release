@@ -2,8 +2,8 @@
 
 import rospy
 
-from cpr_indoornav_msgs.msg import BatteryState
 from jackal_msgs.msg import Status
+from sensor_msgs.msg import BatteryState
 from std_msgs.msg import Header
 
 # Normal operational voltage of the Jackal batteries

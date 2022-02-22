@@ -2,8 +2,8 @@
 
 import rospy
 
-from cpr_indoornav_msgs.msg import BatteryState
 from husky_msgs.msg import HuskyStatus as Status
+from sensor_msgs.msg import BatteryState
 from std_msgs.msg import Header
 
 NaN = float('nan')

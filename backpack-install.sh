@@ -35,12 +35,6 @@ then
     sudo mkdir -p $INSTALL_DIR/share/cpr_indoornav/launch
     sudo cp launch/* $INSTALL_DIR/share/cpr_indoornav/launch
 
-    # Copy the messages
-    cd ../cpr_indoornav_msgs
-    echo "[INFO] Copying message files to $INSTALL_DIR/share/..."
-    sudo mkdir -p $INSTALL_DIR/share/cpr_indoornav_msgs/msg
-    sudo cp msg/* $INSTALL_DIR/share/cpr_indoornav_msgs/msg
-    sudo cp package.xml $INSTALL_DIR/share/cpr_indoornav_msgs
 
     # Ensure all permissions are correct
     echo "[INFO] Setting file permissions"
@@ -50,10 +44,6 @@ then
     sudo chmod 644 $INSTALL_DIR/share/cpr_indoornav/*.xml
     sudo chmod 755 $INSTALL_DIR/share/cpr_indoornav/launch
     sudo chmod 644 $INSTALL_DIR/share/cpr_indoornav/launch/*.launch
-    sudo chmod 755 $INSTALL_DIR/share/cpr_indoornav_msgs
-    sudo chmod 644 $INSTALL_DIR/share/cpr_indoornav_msgs/*.xml
-    sudo chmod 644 $INSTALL_DIR/share/cpr_indoornav_msgs/msg/*.msg
-    sudo chmod 755 $INSTALL_DIR/share/cpr_indoornav_msgs/msg
 
     echo "[INFO] Files installed successfully"
   else

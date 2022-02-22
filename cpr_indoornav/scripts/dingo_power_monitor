@@ -2,8 +2,7 @@
 
 import rospy
 
-from cpr_indoornav_msgs.msg import BatteryState
-from sensor_msgs.msg import BatteryState as BatteryStatus
+from sensor_msgs.msg import BatteryState
 from std_msgs.msg import Header
 
 NaN = float('nan')
@@ -16,39 +15,14 @@ class PowerStatusRelayNode:
         rospy.init_node('dingo_power_monitor')
 
     def start(self):
-        self.mcu_sub = rospy.Subscriber('/battery/status', BatteryStatus, status_cb, self)
+        self.mcu_sub = rospy.Subscriber('/battery/status', BatteryState, status_cb, self)
         self.battery_pub = rospy.Publisher('/export/rocksteady/bms/battery_status', BatteryState, queue_size=1)
 
     def status_callback(self, data):
-        msg = BatteryState()
-
-        # set up the message header
-        msg.header = Header()
-        msg.header.stamp = rospy.Time.now()
-
-        # copy the rest of the payload
-        msg.present = data.present
-        msg.voltage = data.voltage
-        msg.percentage = data.percentage
-        msg.current = data.current
-        msg.power_supply_status = data.power_supply_status
-        msg.power_supply_health = data.power_supply_health
-        msg.power_supply_technology = data.power_supply_technology
-        msg.cell_voltage = data.cell_voltage
-        msg.location = data.location
-        msg.serial_number = data.serial_number
-        msg.charge = data.charge
-        msg.capacity = data.capacity
-        msg.design_capacity = data.design_capacity
-
-        # the Melodic version doesn't support reporting temperature, so manually add it
-        msg.cell_temperature = []
-        for v in data.cell_voltage:
-            msg.cell_temperature.append(NaN)
-        msg.temperature = NaN
-
-        # publish the message
-        self.battery_pub.publish(msg)
+        # Dingo already publishes the right message format, so just relay it as-is
+        # TODO: replace this node with a topic_tools relay?
+        # Keeping this around for now for consistency with melodic-devel
+        self.battery_pub.publish(data)
 
 if __name__=='__main__':
     node = PowerStatusRelayNode()
