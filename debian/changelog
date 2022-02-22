@@ -1,0 +1,23 @@
+ros-noetic-cpr-indoornav (0.2.0-1focal) focal; urgency=high
+
+  * Merge branch 'melodic-devel' into noetic-devel
+  * Initial release for Noetic
+  * Contributors: Chris Iverach-Brereton
+
+ -- Chris Iverach-Brereton <civerachb@clearpathrobotics.com>  Tue, 22 Feb 2022 05:00:00 -0000
+
+ros-noetic-cpr-indoornav (0.1.1-1focal) focal; urgency=high
+
+  * Refactor the package structure, rename packages for clarity
+  * Contributors: Chris Iverach-Brereton
+
+ -- Chris Iverach-Brereton <civerachb@clearpathrobotics.com>  Tue, 22 Feb 2022 05:00:00 -0000
+
+ros-noetic-cpr-indoornav (0.1.0-1focal) focal; urgency=high
+
+  * Inital Release
+  * Contributors: Chris Iverach-Brereton
+
+ -- Chris Iverach-Brereton <civerachb@clearpathrobotics.com>  Wed, 16 Feb 2022 05:00:00 -0000
+
+
