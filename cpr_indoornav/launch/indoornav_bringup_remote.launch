@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<launch>
+  <arg name="remote_host"  default="192.168.131.9" />
+  <arg name="remote_user"  default="administrator" />
+  <arg name="platform"     default="" />
+
+  <machine
+    name="backpack"
+    address="$(arg remote_host)"
+    env-loader="/etc/ros/setup-remote.bash"
+    default="true"
+    user="$(arg remote_user)"
+  />
+
+  <node machine="backpack" pkg="cpr_indoornav" type="indoornav_bringup" name="$(arg platform)_indoornav_node" args="$(arg platform)" output="screen">
+  </node>
+</launch>

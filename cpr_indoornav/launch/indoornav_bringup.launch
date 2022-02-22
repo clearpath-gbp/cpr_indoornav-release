@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<launch>
+  <arg name="platform"     default="" />
+
+  <node pkg="cpr_indoornav" type="indoornav_bringup" name="$(arg platform)_indoornav_node" args="$(arg platform)" output="screen">
+  </node>
+</launch>

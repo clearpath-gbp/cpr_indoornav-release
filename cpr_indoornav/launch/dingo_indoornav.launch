@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<launch>
+  <!-- Additional local nodes needed -->
+  <include file="$(find cpr_indoornav)/launch/indoornav_wireless.launch" />
+  <node name="indoornav_dingo_power_monitor" pkg="cpr_indoornav" type="dingo_power_monitor" />
+
+  <group if="$(optenv DINGO_OMNI 0)">
+    <include file="$(find cpr_indoornav)/launch/indoornav_bringup_remote.launch">
+      <arg name="platform" value="dingo_o" />
+    </include>
+  </group>
+  <group unless="$(optenv DINGO_OMNI 0)">
+    <include file="$(find cpr_indoornav)/launch/indoornav_bringup_remote.launch">
+      <arg name="platform" value="dingo_d" />
+    </include>
+  </group>
+</launch>

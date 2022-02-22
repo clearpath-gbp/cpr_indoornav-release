@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<launch>
+  <arg name="remote_host"  default="192.168.131.9" />
+  <arg name="remote_user"  default="administrator" />
+
+  <machine
+    name="backpack"
+    address="$(arg remote_host)"
+    env-loader="/etc/ros/setup-remote.bash"
+    default="true"
+    user="$(arg remote_user)"
+  />
+
+  <node machine="backpack" pkg="rosbag" type="record" name="indoornav_tests_rosbag_record"
+    args="-a --duration 1s" output="screen" required="true">
+  </node>
+</launch>

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# must be one of
+# dingo_d
+# dingo_o
+# husky
+# jackal
+# ridgeback
+ROBOT=$1
+
+roslaunch ${ROBOT}_indoornav navigation.launch

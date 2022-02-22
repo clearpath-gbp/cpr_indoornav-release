@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<launch>
+  <!-- Additional local nodes needed -->
+  <include file="$(find cpr_indoornav)/launch/indoornav_wireless.launch" />
+  <node name="indoornav_ridgeback_power_monitor" pkg="cpr_indoornav" type="ridgeback_power_monitor" />
+
+  <include file="$(find cpr_indoornav)/launch/indoornav_bringup_remote.launch">
+    <arg name="platform" value="ridgeback" />
+  </include>
+</launch>

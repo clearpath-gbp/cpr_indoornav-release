@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>cpr_indoornav</name>
+  <version>0.1.1</version>
+  <description>Remote launch files for starting IndoorNav on a backpack PC</description>
+
+  <maintainer email="civerachb@clearpathrobotics.com">Chris Iverach-Brereton</maintainer>
+  <author email="civerachb@clearpathrobotics.com">Chris Iverach-Brereton</author>
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>cpr_indoornav_msgs</exec_depend>
+  <exec_depend>robot_upstart</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>topic_tools</exec_depend>
+  <exec_depend>wireless_watcher</exec_depend>
+
+  <!--
+    Status topics for supported platforms
+    You can safely ignore missing dependencies for platforms you aren't
+    actually using.
+  -->
+  <exec_depend>dingo_msgs</exec_depend>
+  <exec_depend>husky_msgs</exec_depend>
+  <exec_depend>jackal_msgs</exec_depend>
+  <exec_depend>ridgeback_msgs</exec_depend>
+  <export>
+  </export>
+</package>
